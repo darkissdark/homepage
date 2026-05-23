@@ -2,6 +2,13 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Viktor Medvid – Fullstack Developer</title>
@@ -51,8 +58,11 @@
                   </svg>
                 </div>
                 <div class="contact-info__title-row">
-                  <h1 class="contact-info__header">Viktor Medvid</h1>
-                  <span class="wave" aria-hidden="true">
+                  <h1 class="contact-info__header" id="profile-name">
+                    Viktor Medvid
+                  </h1>
+                  <span class="wave">
+                    <span class="wave__tooltip">Still waving since 2025</span>
                     <img
                       class="wave__icon"
                       src="assets/wave-hand.svg"
@@ -62,7 +72,9 @@
                     />
                   </span>
                 </div>
-                <h2 class="contact-info__sub-header">Fullstack Developer</h2>
+                <h2 class="contact-info__sub-header" id="profile-role">
+                  Fullstack Developer
+                </h2>
               </div>
 
               <div class="contact-info__block contact-info__block--contacts">
@@ -226,14 +238,43 @@
         </div>
         <div class="container">
           <div class="resume__block">
-            <div class="skills">
-              <h3 class="skills__header">Skills</h3>
-              <p class="skills__text">
-                Vue, Nuxt, React, Next.js, TypeScript, REST, Node.js / Express,
-                MongoDB, SASS / CSS, HTML. Tools: Git, Figma, Webpack, Vite,
-                Trello, Jira.
-              </p>
-            </div>
+            <section class="skills" aria-labelledby="skills-heading">
+              <h3 class="skills__header" id="skills-heading">Skills</h3>
+              <div class="skills__groups">
+                <div class="skills__group">
+                  <h4 class="skills__category">Frontend</h4>
+                  <ul class="skills__list">
+                    <li class="skills__tag">Vue</li>
+                    <li class="skills__tag">Nuxt</li>
+                    <li class="skills__tag">React</li>
+                    <li class="skills__tag">Next.js</li>
+                    <li class="skills__tag">TypeScript</li>
+                    <li class="skills__tag">HTML</li>
+                    <li class="skills__tag">SASS / CSS</li>
+                  </ul>
+                </div>
+                <div class="skills__group">
+                  <h4 class="skills__category">Backend</h4>
+                  <ul class="skills__list">
+                    <li class="skills__tag">Node.js</li>
+                    <li class="skills__tag">Express</li>
+                    <li class="skills__tag">REST APIs</li>
+                    <li class="skills__tag">MongoDB</li>
+                  </ul>
+                </div>
+                <div class="skills__group">
+                  <h4 class="skills__category">Tools</h4>
+                  <ul class="skills__list">
+                    <li class="skills__tag">Git</li>
+                    <li class="skills__tag">Figma</li>
+                    <li class="skills__tag">Webpack</li>
+                    <li class="skills__tag">Vite</li>
+                    <li class="skills__tag">Trello</li>
+                    <li class="skills__tag">Jira</li>
+                  </ul>
+                </div>
+              </div>
+            </section>
           </div>
         </div>
         <div class="container">
@@ -246,16 +287,16 @@
                     <span class="experiences__company-header-durability"
                       >2025–2026</span
                     >
-                    <h3 class="experiences__company-header-name">WWG.it</h3>
+                    <h4 class="experiences__company-header-name">WWG.it</h4>
                   </div>
 
                   <div class="experiences__company-project">
                     <span class="experiences__company-project-role"
                       >Frontend Developer</span
                     >
-                    <h3 class="experiences__company-project-name">
+                    <h4 class="experiences__company-project-name">
                       Website &amp; admin panel
-                    </h3>
+                    </h4>
                     <ul class="experiences__company-project-responsibilities">
                       <li>
                         Create efficient, fast and adaptive interface layouts
@@ -287,11 +328,11 @@
                       class="additional-info__education-university-durability"
                       >2025</span
                     >
-                    <h3
+                    <h4
                       class="additional-info__education-university-speciality"
                     >
                       Fullstack Developer
-                    </h3>
+                    </h4>
                     <p class="additional-info__education-university-name">
                       IT School GoIT
                     </p>
@@ -301,11 +342,11 @@
                       class="additional-info__education-university-durability"
                       >2025</span
                     >
-                    <h3
+                    <h4
                       class="additional-info__education-university-speciality"
                     >
                       Computer Science Basics, Frontend Web Development
-                    </h3>
+                    </h4>
                     <p class="additional-info__education-university-name">
                       School of Programming «Shpp»
                     </p>
@@ -315,12 +356,12 @@
                       class="additional-info__education-university-durability"
                       >2008–2013</span
                     >
-                    <h3
+                    <h4
                       class="additional-info__education-university-speciality"
                     >
                       Institute of Civil Engineering, Thermal Power Engineering
                       and Gas Supply
-                    </h3>
+                    </h4>
                     <p class="additional-info__education-university-name">
                       Vinnytsia National Technical University
                     </p>
@@ -330,11 +371,11 @@
                       class="additional-info__education-university-durability"
                       >2004–2008</span
                     >
-                    <h3
+                    <h4
                       class="additional-info__education-university-speciality"
                     >
                       Specialization in Informatics and Computer Technology
-                    </h3>
+                    </h4>
                     <p class="additional-info__education-university-name">
                       Vinnytsia Technical Lyceum
                     </p>
@@ -356,5 +397,6 @@
         </div>
       </div>
     </main>
+    <script src="easter-egg.js"></script>
   </body>
 </html>
