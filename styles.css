@@ -127,8 +127,56 @@ body {
     margin-left: 10px;
 }
 
+.contact-info__title-row {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    max-width: 100%;
+}
+
 .contact-info__block--profile .contact-info__header {
     margin-bottom: 0;
+}
+
+.wave {
+    display: inline-block;
+    flex-shrink: 0;
+    transform-origin: 70% 75%;
+    animation: wave-hand 2.5s ease-in-out infinite;
+}
+
+.wave__icon {
+    display: block;
+    width: 1.75rem;
+    height: 1.75rem;
+}
+
+@keyframes wave-hand {
+    0%,
+    100% {
+        transform: rotate(0deg);
+    }
+
+    10% {
+        transform: rotate(16deg);
+    }
+
+    20% {
+        transform: rotate(-8deg);
+    }
+
+    30% {
+        transform: rotate(16deg);
+    }
+
+    40% {
+        transform: rotate(-6deg);
+    }
+
+    50%,
+    100% {
+        transform: rotate(0deg);
+    }
 }
 
 .contact-info__block--profile .contact-info__sub-header {
@@ -242,6 +290,10 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
+    .wave {
+        animation: none;
+    }
+
     .contact-info__avatar-wrap,
     .contact-info__avatar-blob--bg,
     .contact-info__avatar-blob--bg path,
@@ -428,6 +480,10 @@ body {
     .contact-info__avatar-wrap:hover .contact-info__avatar-blob--bg,
     .contact-info__avatar-wrap:hover .contact-info__avatar-blob--photo {
         transform: none;
+        animation: none;
+    }
+
+    .wave {
         animation: none;
     }
 }
