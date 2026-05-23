@@ -73,11 +73,43 @@
               </div>
 
               <div class="contact-info__block contact-info__block--center">
-                <img
-                  class="contact-info__avatar"
-                  src="assets/avatar.png"
-                  alt="Viktor Medvid"
-                />
+                <div class="contact-info__avatar-wrap" tabindex="0">
+                  <svg
+                    class="contact-info__avatar-blob contact-info__avatar-blob--bg"
+                    viewBox="0 0 200 200"
+                    xmlns="http://www.w3.org/2000/svg"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fill="#488aec"
+                      d="M164.5,98.5Q154,147,98.5,163.5Q43,180,36,115Q29,50,98.5,36Q168,22,170,81Q172,140,164.5,98.5Z"
+                    />
+                  </svg>
+                  <svg
+                    class="contact-info__avatar-blob contact-info__avatar-blob--photo"
+                    viewBox="0 0 200 200"
+                    xmlns="http://www.w3.org/2000/svg"
+                    role="img"
+                    aria-label="Viktor Medvid"
+                  >
+                    <defs>
+                      <clipPath id="avatarBlobClip">
+                        <path
+                          d="M164.5,98.5Q154,147,98.5,163.5Q43,180,36,115Q29,50,98.5,36Q168,22,170,81Q172,140,164.5,98.5Z"
+                        />
+                      </clipPath>
+                    </defs>
+                    <image
+                      href="assets/avatar.png"
+                      width="160"
+                      height="185"
+                      x="20"
+                      y="28"
+                      clip-path="url(#avatarBlobClip)"
+                      preserveAspectRatio="xMidYMid slice"
+                    />
+                  </svg>
+                </div>
               </div>
 
               <div

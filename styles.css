@@ -162,13 +162,91 @@ body {
     vertical-align: text-bottom;
 }
 
-.contact-info__avatar {
+.contact-info__avatar-wrap {
+    position: relative;
+    width: 10rem;
+    height: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
     border-radius: 50%;
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border: 3px solid;
-    border-color: var(--text-decoration-color);
+    outline: none;
+    transition: filter 0.4s ease;
+}
+
+.contact-info__avatar-blob {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.contact-info__avatar-blob--bg {
+    width: 140%;
+    height: 140%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.5s cubic-bezier(0.34, 1.4, 0.64, 1);
+}
+
+.contact-info__avatar-blob--bg path {
+    transition: fill 0.35s ease;
+}
+
+.contact-info__avatar-blob--photo {
+    inset: 0;
+    transition: transform 0.5s cubic-bezier(0.34, 1.2, 0.64, 1);
+}
+
+.contact-info__avatar-wrap:hover {
+    filter: drop-shadow(0 10px 28px rgba(72, 138, 236, 0.4));
+}
+
+.contact-info__avatar-wrap:hover .contact-info__avatar-blob--bg {
+    animation: avatar-blob-wobble 2.2s ease-in-out infinite;
+}
+
+.contact-info__avatar-wrap:hover .contact-info__avatar-blob--photo {
+    transform: scale(1.07);
+}
+
+@keyframes avatar-blob-wobble {
+    0%,
+    100% {
+        transform: translate(-50%, -50%) scale(1.08) rotate(6deg);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.14) rotate(-8deg);
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .contact-info__avatar-wrap {
+        width: 12rem;
+        height: 12rem;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .contact-info__avatar-wrap,
+    .contact-info__avatar-blob--bg,
+    .contact-info__avatar-blob--bg path,
+    .contact-info__avatar-blob--photo {
+        transition: none;
+    }
+
+    .contact-info__avatar-wrap:hover .contact-info__avatar-blob--bg,
+    .contact-info__avatar-wrap:focus-visible .contact-info__avatar-blob--bg {
+        animation: none;
+        transform: translate(-50%, -50%) scale(1.06);
+    }
+
+    .contact-info__avatar-wrap:hover .contact-info__avatar-blob--photo,
+    .contact-info__avatar-wrap:focus-visible .contact-info__avatar-blob--photo {
+        transform: scale(1.03);
+    }
 }
 
 /* Intro and skills styles */
@@ -239,7 +317,6 @@ body {
 }
 
 .experiences__company-project {
-    margin-left: 15px;
     margin-bottom: 25px;
 }
 
